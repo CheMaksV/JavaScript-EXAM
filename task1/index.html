@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Test</h1>
+
+<form name="form">
+    <label>
+        Name/Value Pair <br>
+        <input type="text" name="input" placeholder="Name=Value">
+    </label>
+    <button>Add</button>
+</form>
+<br>
+
+<span>Name/Value Pair List</span>
+<div class="box-list">
+    <div id="list"></div>
+
+    <div class="box-btn">
+        <div class="box-sort-buttons">
+            <button id="sortNameBtn">Sort by Name</button>
+            <button id="sortValueBtn">Sort by Value</button>
+        </div>
+        <div class="box-delete-buttons">
+            <button id="deleteBtn">Delete</button>
+            <button id="deleteAllBtn">Delete All</button>
+        </div>
+    </div>
+</div>
+
+<script src="main.js" type="module"></script>
+</body>
+</html>

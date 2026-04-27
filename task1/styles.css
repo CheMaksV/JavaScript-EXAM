@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+form label {
+    color: dimgray;
+}
+
+form input {
+    width: 500px;
+    border: 1px solid silver;
+    font-size: 16px;
+}
+
+form button {
+    margin-left: 30px;
+    padding: 1px 8px 1px 8px;
+}
+
+span {
+    color: dimgray;
+}
+
+.box-list {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+#list {
+    width: 500px;
+    min-height: 350px;
+    max-height: 600px;
+    border: 1px solid silver;
+    padding: 5px;
+    overflow: auto;
+}
+
+.box-btn {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: flex-start;
+}
+
+.box-sort-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.box-delete-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin: 2px 0 4px 0;
+}
+
+.input-error {
+    border: 2px solid red;
+}
