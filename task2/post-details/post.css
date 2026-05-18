@@ -1,0 +1,33 @@
+.post {
+    width: 90%;
+    margin: 20px auto;
+    background: lightgray;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.comments {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.comment {
+    background: #dfe6e9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.comment-email {
+    color: dodgerblue;
+    font-size: 13px;
+}
+
+.comment-email:hover {
+    text-decoration: underline;
+}
+
+.comment-info {
+    margin-top: 20px;
+}

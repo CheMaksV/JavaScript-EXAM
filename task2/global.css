@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 35px;
+    border-radius: 8px;
+    background: gray;
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: darkslategray;
+    transform: translateY(-1px);
+}
