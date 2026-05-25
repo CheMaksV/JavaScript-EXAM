@@ -73,9 +73,31 @@ sortName.onclick = () => {
 
 // Sort by value
 sortValue.onclick = () => {
-    items.sort((a, b) => a.value.localeCompare(b.value));
+    items.sort((a, b) => {
+
+        const valA = a.value;
+        const valB = b.value;
+
+        // перетворюємо значення в числа
+        const numA = Number(valA);
+        const numB = Number(valB);
+
+        const isNumA = valA !== '' && !Number.isNaN(numA);
+        const isNumB = valB !== '' && !Number.isNaN(numB);
+
+        // якщо обидва значення числа
+        if (isNumA && isNumB) {
+            return numA - numB;
+        }
+        if (isNumA) return -1;
+        if (isNumB) return 1;
+
+        // інакше сортуємо як текст
+        return String(a.value).localeCompare(String(b.value));
+    });
+
     render();
-}
+};
 
 
 // Delete selected
