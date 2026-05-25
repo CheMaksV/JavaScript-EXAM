@@ -1,19 +1,9 @@
+import renderObjectTree from "../renderObjectTree.js";
+
 export function renderPost(post, postDiv) {
     postDiv.innerText = '';
 
-    const fields = {
-        userId: post.userId,
-        id: post.id,
-        title: post.title,
-        body: post.body
-    };
-
-    for (const key in fields) {
-        const value = fields[key];
-        const p = document.createElement('p');
-        p.textContent = `${key} - ${value}`;
-        postDiv.appendChild(p);
-    }
+    renderObjectTree(post, postDiv);
 }
 
 

@@ -1,74 +1,9 @@
+import renderObjectTree from "../renderObjectTree.js";
+
 export function renderUser(user, userDiv) {
     userDiv.innerText = '';
 
-    const data = {
-        'MAIN INFO': {
-            id: user.id,
-            name: user.name,
-            username: user.username,
-            email: user.email
-        },
-
-        'ADDRESS': {
-            street: user.address?.street,
-            suite: user.address?.suite,
-            city: user.address?.city,
-            zipcode: user.address?.zipcode,
-            geo: {
-                lat: user.address?.geo?.lat,
-                lng: user.address?.geo?.lng
-            }
-        },
-
-        'CONTACT': {
-            phone: user.phone,
-            website: user.website
-        },
-
-        'COMPANY': {
-            name: user.company?.name,
-            catchPhrase: user.company?.catchPhrase,
-            bs: user.company?.bs
-        }
-    };
-
-    for (const section in data) {
-        const sectionDiv = document.createElement('div');
-        sectionDiv.classList.add(section.toLowerCase().replace(/\s+/g, '-'));
-
-        const title = document.createElement('h4');
-        title.innerText = `¯ ${section} ¯`;
-        sectionDiv.appendChild(title);
-
-        for (const key in data[section]) {
-            const fieldValue = data[section][key];
-
-            if (key === 'geo' && (fieldValue.lat || fieldValue.lng)) {
-                const geoDiv = document.createElement('div');
-                geoDiv.classList.add('geo');
-
-                const geoTitle = document.createElement('h5');
-                geoTitle.innerText = '· GEO ·';
-                geoDiv.appendChild(geoTitle);
-
-                for (const geoKey in fieldValue) {
-                    const value = fieldValue[geoKey];
-                    const p = document.createElement('p');
-                    p.innerText = `${geoKey} - ${value}`;
-                    geoDiv.appendChild(p);
-                }
-
-                sectionDiv.appendChild(geoDiv);
-
-            } else {
-                const p = document.createElement('p');
-                p.innerText = `${key} - ${fieldValue}`;
-                sectionDiv.appendChild(p);
-            }
-        }
-
-        userDiv.appendChild(sectionDiv);
-    }
+    renderObjectTree(user, userDiv);
 }
 
 
